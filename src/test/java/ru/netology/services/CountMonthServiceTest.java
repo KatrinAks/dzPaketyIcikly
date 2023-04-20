@@ -1,16 +1,18 @@
-package ru.netology.dzPaketyIcikly.dzPaketyIcikly.services;
+package ru.netology.services;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-//import ru.netology.dzPaketyIcikly.dzPaketyIcikly.services;
+//import ru.netology.services;
 
 public class CountMonthServiceTest {
 
     @Test
     public void CountMonthRest() {
         CountMonthService service = new CountMonthService();
+
+
         int expected = 3;
-        int actual = service.calculate(10_000, 3000,0);
+        int actual = service.calculate(10_000, 3000, 20_000);
 
         //System.out.println("1." + expected + " == ? == " + actual);
 
