@@ -4,13 +4,13 @@ public class CountMonthService {
 
     public int calculate(int income, int expenses, int threshold) {
         int count = 0; // счётчик месяцев отдыха
-        threshold = 0;  // количество денег на счету
+        int money = 0;
         for (int month = 0; month < 12; month++) {
-            if (threshold > income + expenses) { // можем ли отдыхать?
+            if (money >= threshold) { // можем ли отдыхать?
                 count++; // увеличиваем счётчик месяцев отдыха
-                threshold = threshold - expenses * 4;
+                money = threshold - (expenses + (money / 4 * 3));
             } else {
-                threshold = threshold + income;
+                money = money + income - expenses;
             }
         }
         return count;
